@@ -4,13 +4,15 @@ import Image from "next/image";
 
 const Header = () => {
   const { data: sessionData } = useSession();
+  const username = sessionData?.user.name?.split(/[, ]+/);
+  const name = username[0];
 
   return (
     <div className="h-fit w-full p-5">
       <div className="flex items-stretch justify-between sm:justify-evenly  sm:p-5">
         <div className="">
           <h1 className="pb-2 pt-5 text-6xl font-black sm:justify-self-stretch sm:text-7xl sm:tracking-wide">
-            {sessionData?.user?.name ? `${sessionData.user.name} Times` : ""}
+            {sessionData?.user?.name ? `${name} Times` : ""}
           </h1>
           <p className="text-xs font-semibold sm:text-lg">Established 2023</p>
         </div>
