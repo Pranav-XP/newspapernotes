@@ -58,15 +58,6 @@ export default function Home() {
                   ></AiFillGithub>
                 </button>
               </div>
-              <div className="col-span-2 flex flex-col items-center p-3 font-semibold">
-                Facebook:
-                <button onClick={() => void signIn("facebook")}>
-                  <AiFillFacebook
-                    className="hover:cursor-pointer"
-                    size={40}
-                  ></AiFillFacebook>
-                </button>
-              </div>
             </div>
           </div>
         </main>
