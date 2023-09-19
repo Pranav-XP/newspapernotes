@@ -24,7 +24,7 @@ const Feed = () => {
               <h1 className="pb-3 pl-2 pt-2 text-2xl font-bold">
                 {note.heading}
               </h1>
-              <p className="pb-10 pl-4">{note.text}</p>
+              <p className="pb-10 pl-4 pt-1">{note.text}</p>
             </div>
           ))}
 
@@ -81,10 +81,10 @@ const Feed = () => {
               className="my-5 rounded-sm border-y-2 border-neutral-700 bg-neutral-50 pb-10"
               key={note.id}
             >
-              <h1 className="pb-3 pl-2 pt-2 text-xl font-bold">
+              <h1 className=" pb-3 pl-2 pt-2 text-xl font-bold">
                 {note.heading}
               </h1>
-              <p className="pl-4">{note.text}</p>
+              <p className="pl-4 text-base">{note.text}</p>
             </div>
           ))}
       </div>

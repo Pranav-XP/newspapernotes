@@ -2,7 +2,11 @@ import Head from "next/head";
 import Content from "~/components/Content";
 import Header from "~/components/Header";
 import { signIn, useSession } from "next-auth/react";
-import { AiFillGoogleCircle, AiFillGithub } from "react-icons/ai";
+import {
+  AiFillFacebook,
+  AiFillGoogleCircle,
+  AiFillGithub,
+} from "react-icons/ai";
 
 export default function Home() {
   const { data: sessionData } = useSession();
@@ -24,9 +28,10 @@ export default function Home() {
           </main>
         </>
       ) : (
-        <main className="flex h-screen w-screen items-center justify-evenly gap-3 overflow-auto bg-amber-50 font-custom">
+        <main className="flex h-screen w-screen flex-col items-center justify-center gap-3 overflow-auto bg-amber-50 font-custom">
+          <h1 className="text-3xl font-black">NewsPaper Notes! 📰</h1>
           <div className="flex h-fit w-fit flex-col items-center justify-between gap-2 rounded-md border-2 border-neutral-600 bg-stone-200 p-10">
-            <h1 className="text-3xl font-bold">Get Started!</h1>
+            <h2 className="text-3xl font-bold">Get Started!</h2>
             <p className="text-xl">
               Made by{" "}
               <a className="underline" href="https://pranavtech.dev/">
@@ -34,10 +39,10 @@ export default function Home() {
               </a>
             </p>
             <h2 className="text-2xl font-bold">Sign in with:</h2>
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-2 items-center gap-3">
               <div className="flex flex-col items-center p-3 font-semibold">
                 Google:
-                <button onClick={() => signIn("google")}>
+                <button onClick={() => void signIn("google")}>
                   <AiFillGoogleCircle
                     className="hover:cursor-pointer"
                     size={40}
@@ -46,11 +51,20 @@ export default function Home() {
               </div>
               <div className="flex flex-col items-center p-3 font-semibold">
                 Github:
-                <button onClick={() => signIn("github")}>
+                <button onClick={() => void signIn("github")}>
                   <AiFillGithub
                     className="hover:cursor-pointer"
                     size={40}
                   ></AiFillGithub>
+                </button>
+              </div>
+              <div className="col-span-2 flex flex-col items-center p-3 font-semibold">
+                Facebook:
+                <button onClick={() => void signIn("facebook")}>
+                  <AiFillFacebook
+                    className="hover:cursor-pointer"
+                    size={40}
+                  ></AiFillFacebook>
                 </button>
               </div>
             </div>

@@ -69,8 +69,8 @@ const Modal: React.FC<IModalProps> = ({ isOpen = false, onCloseRequest }) => {
             <AiFillCloseCircle size={30}></AiFillCloseCircle>
           </span>
           <div
-            className="mt-2 h-fit w-fit place-self-center rounded-lg bg-neutral-600 p-1 font-semibold text-bodyColor hover:cursor-pointer active:bg-neutral-700"
-            onClick={handleCreateNote}
+            className="mt-2 h-fit w-fit place-self-center rounded-lg bg-zinc-800 p-1 font-semibold text-bodyColor hover:cursor-pointer active:bg-neutral-700"
+            onClick={() => void handleCreateNote()}
           >
             Create
           </div>
