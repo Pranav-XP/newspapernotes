@@ -1,35 +1,42 @@
-import React from 'react'
-import { signIn, signOut, useSession } from "next-auth/react";
-import Image from 'next/image';
-import { ZodDate, date } from 'zod';
+import React from "react";
+import { signOut, useSession } from "next-auth/react";
+import Image from "next/image";
 
 const Header = () => {
-    const { data:sessionData} = useSession();
+  const { data: sessionData } = useSession();
 
   return (
-    <div className='w-full h-max'>
-        <div className='flex pt-3 pl-3 justify-between'>
-            <div className='block flex-col'>
-            <h1 className='font-black text-4xl sm:text-6xl sm:tracking-wide pb-2'>
-                {sessionData?.user?.name ? `${sessionData.user.name} Times` : "" }
-            </h1>
-            <p className='text-xs font-semibold'>Established 2023</p>
-            </div>
-            
-            <div className='py-1'>
-                {sessionData?.user ? (
-                    <div className='p-2 grayscale'>
-                        <Image className='border-2 border-neutral-800 w-15 h-15' width={50} height={50} src={sessionData?.user?.image} alt={sessionData?.user?.name}></Image>
-                        
-                    </div>
-                ):(
-                    <button>Login</button>
-                )}
-            </div>
+    <div className="h-fit w-full p-5">
+      <div className="flex items-stretch justify-between sm:justify-evenly  sm:p-5">
+        <div className="">
+          <h1 className="pb-2 pt-5 text-6xl font-black sm:justify-self-stretch sm:text-7xl sm:tracking-wide">
+            {sessionData?.user?.name ? `${sessionData.user.name} Times` : ""}
+          </h1>
+          <p className="text-xs font-semibold sm:text-lg">Established 2023</p>
         </div>
 
+        <div className="py-1">
+          <span className="font-semibold">Chief Editor:</span>
+          {sessionData?.user ? (
+            <div className="p-2 grayscale">
+              <Image
+                className="w-15 h-15 border-2 border-neutral-800"
+                width={50}
+                height={50}
+                src={sessionData?.user?.image}
+                alt={sessionData?.user?.name}
+              ></Image>
+              <div className="mt-2 flex items-center justify-evenly rounded-md border bg-neutral-500 font-semibold">
+                <button onClick={() => signOut()}>Sign Out</button>
+              </div>
+            </div>
+          ) : (
+            <button>Login</button>
+          )}
+        </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

@@ -5,11 +5,12 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        custom: ['var(--font-newsreader)'],
-        mono: ['var(--font-roboto-mono)'],
+        custom: ["var(--font-newsreader)"],
+        mono: ["var(--font-roboto-mono)"],
       },
-      colors:{
-        bodyColor:"#fcfce6"
+      colors: {
+        bodyColor: "#fcfce6",
+        modalBg: "rgba(0, 0, 0, 0.61)",
       },
     },
   },
