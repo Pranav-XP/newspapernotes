@@ -27,6 +27,12 @@ export default function Home() {
         <main className="flex h-screen w-screen items-center justify-evenly gap-3 overflow-auto bg-amber-50 font-custom">
           <div className="flex h-fit w-fit flex-col items-center justify-between gap-2 rounded-md border-2 border-neutral-600 bg-stone-200 p-10">
             <h1 className="text-3xl font-bold">Get Started!</h1>
+            <p className="text-xl">
+              Made by{" "}
+              <a className="underline" href="https://pranavtech.dev/">
+                Pranav
+              </a>
+            </p>
             <h2 className="text-2xl font-bold">Sign in with:</h2>
             <div className="grid grid-cols-2 gap-3">
               <div className="flex flex-col items-center p-3 font-semibold">
