@@ -2,11 +2,7 @@ import Head from "next/head";
 import Content from "~/components/Content";
 import Header from "~/components/Header";
 import { signIn, useSession } from "next-auth/react";
-import {
-  AiFillFacebook,
-  AiFillGoogleCircle,
-  AiFillGithub,
-} from "react-icons/ai";
+import { AiFillGoogleCircle, AiFillGithub } from "react-icons/ai";
 
 export default function Home() {
   const { data: sessionData } = useSession();
@@ -20,7 +16,7 @@ export default function Home() {
 
       {sessionData?.user ? (
         <>
-          <main className="h-screen w-screen overflow-auto bg-amber-50 font-custom">
+          <main className="h-screen w-screen overflow-auto bg-bodyColor font-custom">
             <Header></Header>
             <div className="mx-10 flex flex-col items-center border-t-2 border-neutral-700">
               <Content></Content>

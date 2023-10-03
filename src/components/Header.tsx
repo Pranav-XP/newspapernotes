@@ -1,5 +1,5 @@
 import React from "react";
-import { useSession } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 
 const Header = () => {
@@ -20,14 +20,19 @@ const Header = () => {
         <div className="flex flex-col p-1">
           <span className="font-semibold">Chief Editor:</span>
           {sessionData?.user ? (
-            <div className="grayscale">
-              <Image
-                className="w-15 h-15 border-2 border-neutral-800"
-                width={50}
-                height={50}
-                src={sessionData?.user?.image ?? ""}
-                alt={sessionData?.user?.name ?? ""}
-              ></Image>
+            <div className="flex flex-col justify-start gap-1">
+              <div className="grayscale">
+                <Image
+                  className="w-15 h-15 border-2 border-neutral-800"
+                  width={50}
+                  height={50}
+                  src={sessionData?.user?.image ?? ""}
+                  alt={sessionData?.user?.name ?? ""}
+                ></Image>
+              </div>
+              <div className="flex w-fit items-center justify-evenly rounded-md border border-zinc-300 bg-zinc-800 p-0.5 text-xs font-semibold text-white hover:cursor-pointer md:text-sm">
+                <button onClick={() => void signOut()}>Sign Out</button>
+              </div>
             </div>
           ) : (
             <button>Login</button>

@@ -9,7 +9,7 @@ export default {
         mono: ["var(--font-roboto-mono)"],
       },
       colors: {
-        bodyColor: "#fcfce6",
+        bodyColor: "#e6e6e6",
         modalBg: "rgba(0, 0, 0, 0.61)",
       },
     },
